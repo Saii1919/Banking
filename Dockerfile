@@ -1,14 +1,14 @@
-# Start with a valid OpenJDK 17 slim base image
-FROM openjdk:17-slim
+# Use Eclipse Temurin 17 JDK slim image
+FROM eclipse-temurin:17-jdk-jammy
 
-# Set a working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy the compiled jar from target folder
+# Copy the compiled JAR into the container
 COPY target/BankProject-0.0.1-SNAPSHOT.jar BankProject.jar
 
-# Expose port (optional, if your app uses a port, e.g., 8080)
+# Expose port if needed (e.g., if your app listens on 8080)
 EXPOSE 8080
 
-# Run the jar file
+# Command to run the application
 ENTRYPOINT ["java", "-jar", "BankProject.jar"]
