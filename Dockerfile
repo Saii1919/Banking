@@ -1,5 +1,5 @@
 #Start with base image
-FROM openjdk:17-jdk
+FROM openjdk:17.0.9-jdk-slim
 
 COPY target/BankProject-0.0.1-SNAPSHOT.jar BankProject-0.0.1-SNAPSHOT.jar
 
